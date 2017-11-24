@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 
     private Rigidbody2D player;
-    private float xDir = 0, yDir = 0;
+    private float launchAngle = 45;
 
 	// Use this for initialization
 	void Start () {
@@ -20,19 +20,36 @@ public class PlayerController : MonoBehaviour {
 
     public void Launch()
     {
-        player.AddForce(new Vector2(30, 30) * speed);
+        
+
+        Debug.Log("launchAngle (rad)== " + launchAngle);
+        Debug.Log("launchAngle (deg)== " + (launchAngle * Mathf.PI / 180));
+
+        launchAngle = launchAngle * Mathf.PI / 180;
+        //player.AddForce(new Vector2(30, 30) * speed);
+        float xSpeed = Mathf.Cos(launchAngle) * 50;
+        float ySpeed = Mathf.Sin(launchAngle) * 50;
+
+        Debug.Log("xSpeed == " + xSpeed);
+        Debug.Log("ySpeed == " + ySpeed);
+
+
+        player.AddForce(new Vector2(xSpeed, ySpeed));
     }
 
-    void OnCollisionStay2D(Collision2D coll)
+    //void OnCollisionStay2D(Collision2D coll)
+    //{
+    //    if(coll.gameObject.CompareTag("Wall"))
+    //    {
+    //        FlipVector();
+    //    }
+    //}
+
+    // Launch angle is set by the slider UI
+    public void SetLaunchAngle(float sliderAngle)
     {
-        if(coll.gameObject.CompareTag("Wall"))
-        {
-            FlipVector();
-        }
+        launchAngle = sliderAngle;
+        Debug.Log("LaunchAngle == " + launchAngle);
     }
 
-    void FlipVector()
-    {
-        //player.transform.Rotate(new Vector)
-    }
 }
