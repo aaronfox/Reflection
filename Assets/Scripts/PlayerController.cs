@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("ySpeed == " + ySpeed);
 
 
-        player.AddForce(new Vector2(xSpeed, ySpeed));
+        player.AddForce(new Vector2(xSpeed, ySpeed) * speed);
     }
 
     //void OnCollisionStay2D(Collision2D coll)
