@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour {
 
     public void Launch()
     {
-        
-
         Debug.Log("launchAngle (rad)== " + launchAngle);
         Debug.Log("launchAngle (deg)== " + (launchAngle * Mathf.PI / 180));
 
@@ -52,4 +50,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("LaunchAngle == " + launchAngle);
     }
 
+    // Check this out for Object instantiation:
+    // https://answers.unity.com/questions/399540/how-to-have-the-player-place-gameobjects-in-scene.html
+    // https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Reflector
+  - Background Tile
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Background Layer
+  - Tile Layer
+  - Player Layer
   - 
   - 
   - 
